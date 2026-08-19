@@ -570,11 +570,10 @@ footer p,
     .cards,
     .projects {
         grid-template-columns: 1fr;
-        width: 190px;
     }
 
     .project-image {
-        height: 220px;
+        height: 215px;
     }
 
     .project {
