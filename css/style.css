@@ -570,15 +570,10 @@ footer p,
     .cards,
     .projects {
         grid-template-columns: 1fr;
-        max-width: 100%;
-        width: 100%;
-        align-self: center;
     }
 
     .project-image {
-        height: 210px;
-        max-width: auto;
-        align-self: center;
+        height: 220px;;
     }
 
     .projects {
