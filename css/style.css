@@ -347,55 +347,51 @@ a {
     margin-top: 50px;
 }
 
-.projects {
-    margin-top: 60px;
-
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
-}
-
 .project {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
     border: 1px solid var(--border);
     background: var(--surface);
+    overflow: hidden;
 }
 
 .project-image {
+    width: 100%;
+    max-width: 100%;
     height: 300px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    background:
-        radial-gradient(
-            circle at center,
-            rgba(139, 92, 246, 0.25),
-            transparent 60%
-        );
-}
-
-.project-image span {
-    font-size: 2rem;
-    font-weight: 800;
-    letter-spacing: 4px;
 }
 
 .project-info {
+    width: 100%;
+    max-width: 100%;
     padding: 25px;
 
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 20px;
+
+    min-width: 0;
+}
+
+.project-info > div {
+    min-width: 0;
+    max-width: 100%;
 }
 
 .project-info h3 {
     margin-top: 5px;
     font-size: 1.3rem;
+
+    /* Important for long text */
+    overflow-wrap: anywhere;
+    word-break: break-word;
 }
 
 .project-link {
-    color: var(--accent-light);
+    flex-shrink: 0;
+    white-space: nowrap;
 }
 
 
@@ -576,15 +572,18 @@ footer p,
         height: 220px;;
     }
 
+    @media (max-width: 800px) {
+
     .projects {
-        grid-template-columns: 1fr;
         width: 100%;
+        max-width: 100%;
+        grid-template-columns: 1fr;
+        gap: 20px;
     }
 
     .project {
         width: 100%;
         max-width: 100%;
-        overflow: hidden;
     }
 
     .project-image {
@@ -593,32 +592,14 @@ footer p,
     }
 
     .project-info {
-        width: 100%;
         padding: 20px;
-
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-
         gap: 15px;
-    }
-
-    .project-info > div {
-        min-width: 0;
-        flex: 1;
     }
 
     .project-info h3 {
         font-size: 1.1rem;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
     }
-
-    .project-link {
-        flex-shrink: 0;
-        white-space: nowrap;
-    }
+}
 }
 
     footer {
