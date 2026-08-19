@@ -572,18 +572,15 @@ footer p,
         height: 220px;;
     }
 
-    @media (max-width: 800px) {
-
     .projects {
-        width: 100%;
-        max-width: 100%;
         grid-template-columns: 1fr;
-        gap: 20px;
+        width: 100%;
     }
 
     .project {
         width: 100%;
         max-width: 100%;
+        overflow: hidden;
     }
 
     .project-image {
@@ -592,14 +589,32 @@ footer p,
     }
 
     .project-info {
+        width: 100%;
         padding: 20px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
         gap: 15px;
+    }
+
+    .project-info > div {
+        min-width: 0;
+        flex: 1;
     }
 
     .project-info h3 {
         font-size: 1.1rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
-}
+
+    .project-link {
+        flex-shrink: 0;
+        white-space: nowrap;
+    }
 }
 
     footer {
