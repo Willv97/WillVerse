@@ -574,7 +574,8 @@ footer p,
     }
 
     .project-image {
-        height: 215px;
+        height: 220px;
+        width: auto;
     }
 
     .project {
