@@ -1,0 +1,529 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --bg: #070707;
+    --surface: #101010;
+    --border: #242424;
+    --text: #f5f5f5;
+    --muted: #929292;
+    --accent: #8b5cf6;
+    --accent-light: #b794ff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    width: 100%;
+    padding: 25px 6%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-bottom: 1px solid var(--border);
+
+    position: fixed;
+    top: 0;
+    z-index: 100;
+
+    background: rgba(7, 7, 7, 0.8);
+    backdrop-filter: blur(15px);
+}
+
+.logo,
+.footer-logo {
+    font-weight: 800;
+    letter-spacing: -1px;
+    font-size: 1.2rem;
+}
+
+.logo span,
+.footer-logo span {
+    color: var(--accent-light);
+}
+
+.navbar nav {
+    display: flex;
+    gap: 35px;
+}
+
+.navbar nav a {
+    color: var(--muted);
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+.navbar nav a:hover {
+    color: white;
+}
+
+.nav-button {
+    border: 1px solid var(--border);
+    padding: 10px 18px;
+    border-radius: 30px;
+    font-size: 0.85rem;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 100vh;
+
+    padding: 160px 8% 100px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    overflow: hidden;
+}
+
+.hero-content {
+    max-width: 700px;
+}
+
+.eyebrow,
+.section-label,
+.project-type {
+    color: var(--accent-light);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+}
+
+.hero h1 {
+    font-size: clamp(5rem, 12vw, 10rem);
+    line-height: 0.85;
+    letter-spacing: -8px;
+    margin: 25px 0;
+}
+
+.hero h1 span {
+    display: block;
+    color: transparent;
+    -webkit-text-stroke: 1px var(--accent-light);
+}
+
+.hero-description {
+    color: var(--muted);
+    max-width: 500px;
+    font-size: 1.05rem;
+    margin-bottom: 35px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.primary-button,
+.secondary-button {
+    display: inline-block;
+    padding: 14px 24px;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.primary-button {
+    background: var(--accent);
+}
+
+.primary-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(139, 92, 246, 0.25);
+}
+
+.secondary-button {
+    border: 1px solid var(--border);
+}
+
+.secondary-button:hover {
+    border-color: var(--accent);
+}
+
+
+/* =========================
+   HERO VISUAL
+========================= */
+
+.hero-visual {
+    width: 400px;
+    height: 400px;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.orb {
+    position: absolute;
+
+    width: 280px;
+    height: 280px;
+
+    border-radius: 50%;
+
+    background: radial-gradient(
+        circle,
+        rgba(139, 92, 246, 0.45),
+        transparent 65%
+    );
+
+    filter: blur(20px);
+
+    animation: float 5s ease-in-out infinite;
+}
+
+.code-card {
+    width: 230px;
+    height: 140px;
+
+    background: rgba(20, 20, 20, 0.8);
+
+    border: 1px solid var(--border);
+    border-radius: 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    position: relative;
+
+    backdrop-filter: blur(10px);
+
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+}
+
+.code-card span {
+    color: var(--accent-light);
+}
+
+.code-card p {
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+
+/* =========================
+   SECTIONS
+========================= */
+
+.section {
+    padding: 120px 8%;
+    border-top: 1px solid var(--border);
+}
+
+.section-heading {
+    margin-top: 50px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+
+    align-items: end;
+}
+
+.section h2 {
+    font-size: clamp(3rem, 7vw, 6rem);
+    line-height: 0.95;
+    letter-spacing: -4px;
+}
+
+.section h2 span {
+    color: var(--accent-light);
+}
+
+.section-heading p {
+    color: var(--muted);
+    max-width: 450px;
+}
+
+
+/* =========================
+   CARDS
+========================= */
+
+.cards {
+    margin-top: 60px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 15px;
+}
+
+.card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+
+    padding: 35px;
+
+    min-height: 280px;
+
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent);
+}
+
+.card-number {
+    color: var(--muted);
+    font-size: 0.8rem;
+}
+
+.card h3 {
+    margin-top: 70px;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.card p {
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+
+/* =========================
+   PROJECTS
+========================= */
+
+.work-header {
+    margin-top: 50px;
+}
+
+.projects {
+    margin-top: 60px;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.project {
+    border: 1px solid var(--border);
+    background: var(--surface);
+}
+
+.project-image {
+    height: 300px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(139, 92, 246, 0.25),
+            transparent 60%
+        );
+}
+
+.project-image span {
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: 4px;
+}
+
+.project-info {
+    padding: 25px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.project-info h3 {
+    margin-top: 5px;
+    font-size: 1.3rem;
+}
+
+.project-link {
+    color: var(--accent-light);
+}
+
+
+/* =========================
+   BUILDING
+========================= */
+
+.building-content {
+    margin-top: 60px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+}
+
+.status-list {
+    border-top: 1px solid var(--border);
+}
+
+.status-item {
+    padding: 25px 0;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.status-item p {
+    color: var(--muted);
+    font-size: 0.85rem;
+}
+
+.status {
+    font-size: 0.65rem;
+    letter-spacing: 1px;
+    padding: 7px 10px;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+}
+
+.status.active {
+    color: #a7f3d0;
+}
+
+.status.exploring {
+    color: #fde68a;
+}
+
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact {
+    text-align: center;
+    padding-top: 180px;
+    padding-bottom: 180px;
+}
+
+.contact h2 {
+    margin: 35px 0;
+}
+
+.contact > p:not(.section-label) {
+    color: var(--muted);
+    margin: 0 auto 35px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    padding: 30px 8%;
+
+    border-top: 1px solid var(--border);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer p,
+.socials a {
+    color: var(--muted);
+    font-size: 0.8rem;
+}
+
+.socials {
+    display: flex;
+    gap: 20px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 800px) {
+
+    .navbar nav {
+        display: none;
+    }
+
+    .hero {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-top: 150px;
+    }
+
+    .hero h1 {
+        font-size: 5rem;
+        letter-spacing: -5px;
+    }
+
+    .hero-visual {
+        width: 100%;
+        margin-top: 50px;
+    }
+
+    .section-heading,
+    .building-content {
+        grid-template-columns: 1fr;
+    }
+
+    .cards,
+    .projects {
+        grid-template-columns: 1fr;
+    }
+
+    .project-image {
+        height: 220px;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+}
