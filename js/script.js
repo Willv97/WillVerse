@@ -1,4 +1,10 @@
 // Willverse
 // Interactive features will be added here as the site grows.
 
-console.log("Welcome to the Willverse.");
+ const hamburger = document.getElementById("hamburger");
+const navLinks = document.querySelector(".nav-links");
+
+hamburger.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+    hamburger.classList.toggle("active");
+});
